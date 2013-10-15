@@ -13,7 +13,7 @@ case class Block(val pos: Int, digit: Option[Int]) {
 
 object EmptyBlock extends Block(2, None)
 
-class Solver(n: Int) {
+class SolverP440(n: Int) {
 
 	val board = Board(n)
 	val blocks = EmptyBlock +: (0 to 9).map(i => Block(1, Some(i))).toList
@@ -53,6 +53,6 @@ class Solver(n: Int) {
 object P440 extends App {
 
 	// [error] (run-main) java.lang.OutOfMemoryError: Java heap space
-	println(new Solver(2000).ssolutions)
+	println(new SolverP440(2).ssolutions)
 
 }
