@@ -50,7 +50,7 @@ i)). The first prime is 2, which is less than 3 -- so far so good. But we
 don't yet know the second prime, so we need to compute it. Fine, so we need to
 first see whether 3 belongs ... BOOM!
 */
-
+	
 package problems
 
 import scala.math.BigInt
