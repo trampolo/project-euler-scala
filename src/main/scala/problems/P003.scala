@@ -50,7 +50,7 @@ i)). The first prime is 2, which is less than 3 -- so far so good. But we
 don't yet know the second prime, so we need to compute it. Fine, so we need to
 first see whether 3 belongs ... BOOM!
 */
-	
+
 package problems
 
 import scala.math.BigInt
@@ -60,7 +60,7 @@ case class SolverP3(n: BigInt) {
   def from(x: BigInt): Stream[BigInt] = x #:: from(x + 1)
 
   lazy val primes: Stream[BigInt] = BigInt(2) #:: from(3)
-    .filter(i => primes.takeWhile {j => j * j <= i}.forall {k => i % k > 0})
+    .filter(i => primes.takeWhile { j => j * j <= i }.forall { k => i % k > 0 })
 
   def solution = primes.takeWhile(j => j * j <= n).filter(x => n % x == 0).toList.max
 }

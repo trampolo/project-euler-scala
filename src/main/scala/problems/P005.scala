@@ -9,7 +9,7 @@ numbers from 1 to 20?
 
 */
 
-package problems 
+package problems
 
 case class SolverP5(n: Int) {
 

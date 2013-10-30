@@ -22,17 +22,17 @@ package problems
 
 object P14 extends App {
 
-	def collatzChain(n: BigInt): Stream[BigInt] = n #:: collatzChain(next(n))
+  def collatzChain(n: BigInt): Stream[BigInt] = n #:: collatzChain(next(n))
 
-	def next(n: BigInt): BigInt = n match {
-		case x if (x == 1) => BigInt(0)
-		case x if (n % 2 > 0) => 3*n + 1
-		case x => n/2
-	}
-	
-	val cc = for {
-		i <- 1 to 1000000
-	} yield (i, collatzChain(i).takeWhile(x => x > 0).foldLeft(BigInt(0))((c, x) => 1 + c))
-	
-	println(cc.maxBy(_._2))
+  def next(n: BigInt): BigInt = n match {
+    case x if (x == 1) => BigInt(0)
+    case x if (n % 2 > 0) => 3 * n + 1
+    case x => n / 2
+  }
+
+  val cc = for {
+    i <- 1 to 1000000
+  } yield (i, collatzChain(i).takeWhile(x => x > 0).foldLeft(BigInt(0))((c, x) => 1 + c))
+
+  println(cc.maxBy(_._2))
 }

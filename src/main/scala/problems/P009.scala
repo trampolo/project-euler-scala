@@ -13,13 +13,12 @@ package problems
 
 object P9 extends App {
 
-println(
-	(for {
-		a <- 1 to 1000
-		b <- 1 to (1000 - a)
-		c <- 1 to (1000 - b - a)
-		if (a + b + c) == 1000
-		if (a*a + b*b) == c*c
-	} yield a * b * c).head
-	)
+  println(
+    (for {
+      a <- 1 to 1000
+      b <- 1 to (1000 - a)
+      c <- 1 to (1000 - b - a)
+      if (a + b + c) == 1000
+      if (a * a + b * b) == c * c
+    } yield a * b * c).head)
 }

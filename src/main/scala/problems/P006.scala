@@ -12,9 +12,8 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum. 
 */
 
-
-package problems 
+package problems
 
 object P6 extends App {
-	println((1 to 100).sum * (1 to 100).sum - (1 to 100).map(i => i * i).sum)
+  println((1 to 100).sum * (1 to 100).sum - (1 to 100).map(i => i * i).sum)
 }
