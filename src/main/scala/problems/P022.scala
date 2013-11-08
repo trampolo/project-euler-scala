@@ -24,7 +24,7 @@ object P22 extends App {
   val xs = scala.io.Source.fromFile("./src/resources/names.txt")
     .getLines.mkString.replaceAll("\"", "").split(',').toList.sorted.zip(Stream.from(1))
 
-  println(xs.map(t => BigInt(t._1.map(alphabet).sum * t._2)).sum)
+    println(xs.map(t => BigInt(t._1.map(alphabet).sum * t._2)).sum)
 
 
 }
